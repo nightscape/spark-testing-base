@@ -288,7 +288,7 @@ lazy val publishSettings = Seq(
   credentials ++= Seq(Credentials(Path.userHome / ".ivy2" / ".sbtcredentials"), Credentials(Path.userHome / ".ivy2" / ".sparkcredentials")),
   useGpg := true,
   artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
-    artifact.name + "-" + sparkVersion.value +  module.revision + "." + artifact.extension
+    Artifact.artifactName(sv, module, artifact).replaceAll(s"-${module.revision}", s"-${sparkVersion.value}${module.revision}")
   }
 )
 
