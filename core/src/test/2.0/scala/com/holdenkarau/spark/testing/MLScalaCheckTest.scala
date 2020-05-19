@@ -5,7 +5,7 @@ import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.types.{StructField, StructType}
 import org.scalacheck.Prop.forAll
 import org.scalatest.FunSuite
-import org.scalatest.prop.Checkers
+import org.scalatestplus.scalacheck.Checkers
 
 class MLScalaCheckTest extends FunSuite with SharedSparkContext with Checkers {
   // re-use the spark context

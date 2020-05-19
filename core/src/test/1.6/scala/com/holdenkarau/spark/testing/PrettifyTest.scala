@@ -7,7 +7,7 @@ import org.scalacheck.Prop._
 import org.scalacheck.util.Pretty
 import org.scalatest.FunSuite
 import org.scalatest.exceptions.GeneratorDrivenPropertyCheckFailedException
-import org.scalatest.prop.Checkers
+import org.scalatestplus.scalacheck.Checkers
 
 class PrettifyTest extends FunSuite with SharedSparkContext with Checkers with Prettify {
   implicit val propertyCheckConfig = PropertyCheckConfig(minSize = 2, maxSize = 2)
